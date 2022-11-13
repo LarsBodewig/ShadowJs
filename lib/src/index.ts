@@ -1,3 +1,5 @@
-const test = () => "test";
+export function test() {
+  console.log("test");
+}
 
-export { test };
+export default { test };
