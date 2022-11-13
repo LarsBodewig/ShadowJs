@@ -1,0 +1,14 @@
+{
+  "name": "shadow-js-test",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "node test.mjs"
+  },
+  "author": "Lars Bodewig",
+  "license": "private",
+  "private": true,
+  "dependencies": {
+    "shadow-js": "file:../lib"
+  }
+}

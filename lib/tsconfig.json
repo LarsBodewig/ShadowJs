@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "build"
+  },
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
