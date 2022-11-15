@@ -1,5 +1,2 @@
-export function test() {
-  console.log("test");
-}
-
-export default { test };
+export { shadowJs } from "./main";
+export { ShadowJs, ShadowUpdateEventListener } from "./types";

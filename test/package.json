@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "node test.mjs",
     "serve": "webpack serve"
   },
   "author": "Lars Bodewig",
