@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "serve": "webpack serve"
+    "serve": "webpack serve",
+    "build": "webpack"
   },
   "author": "Lars Bodewig",
   "license": "private",
   "private": true,
   "dependencies": {
+    "html-webpack-plugin": "^5.5.0",
     "shadow-js": "file:../lib",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.11.1"
+    "webpack-dev-server": "^4.11.1",
+    "webpack-glob-entries": "^1.0.1"
   }
 }

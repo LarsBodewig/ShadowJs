@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>ShadowJs Test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="index.js"></script>
   </head>
   <body>
-    <button type="button" onclick="callJsInShadow()">callJsInShadow</button>
-    <p>original</p>
-    <div id="shadow-container">
-      <p>original</p>
-    </div>
+    <h1>Tests:</h1>
+    <ul>
+      <% for (var page in pages) { %>
+      <li><a href="<%= pages[page] %>"><%= pages[page] %></a></li>
+      <% } %>
+    </ul>
   </body>
 </html>

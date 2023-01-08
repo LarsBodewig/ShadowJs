@@ -1,4 +1,4 @@
-import { changeP } from "./test";
+import { changeP } from "../../util";
 import { shadowJs } from "shadow-js";
 
 let shadow;
