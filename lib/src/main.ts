@@ -1,4 +1,4 @@
-import { Func, ShadowJs } from "./types";
+import { Func, RenderFunc, ShadowJs } from "./types";
 import { cloneHTMLElement, nextId } from "./util";
 
 function buildFrameDoc(...content: Node[]) {
@@ -9,9 +9,13 @@ function buildFrameDoc(...content: Node[]) {
   return html;
 }
 
+function wrapBodyRenderFunction(renderFn: Func) {
+  return new Function("document.body.appendChild(" + renderFn.name + "())");
+}
+
 export async function shadowJs<T extends HTMLElement>(
   element: T,
-  renderFn?: Func
+  renderFn?: RenderFunc
 ): Promise<ShadowJs<T>> {
   const elementClone = cloneHTMLElement(element, true);
   const iframe = document.createElement("iframe");
@@ -25,8 +29,10 @@ export async function shadowJs<T extends HTMLElement>(
     iframe.contentWindow!.addEventListener("DOMContentLoaded", () => {
       const shadow = new ShadowJs(element, iframe);
       if (renderFn) {
+        const wrappedFn = wrapBodyRenderFunction(renderFn);
         shadow.registerWindowFunction(renderFn);
-        shadow.callWindowFunction(renderFn.name);
+        shadow.registerWindowFunction(wrappedFn);
+        shadow.callWindowFunction(wrappedFn.name);
       }
       resolve(shadow);
     });

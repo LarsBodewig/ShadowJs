@@ -7,9 +7,12 @@ window.addEventListener("DOMContentLoaded", async () => {
   const elem = document.querySelector("#shadow-container");
   shadow = shadowJs(elem);
   shadow.then((s) => {
-    s.shadow.style.border = "1px solid red";
-    s.shadow.style.display = "block";
+    s.shadow.classList.add("visible-iframe");
     s.registerWindowFunction(changeP);
+    s.onUpdateShadow(() => {
+      const output = document.querySelector("#update-output");
+      output.textContent = "listener called at " + new Date();
+    });
   });
 });
 

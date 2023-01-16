@@ -1,11 +1,12 @@
 import { eventKeys } from "./events";
-import { cloneHTMLElement, zipArraysTuple, getAllHTMLElements } from "./util";
+import { cloneHTMLElement, getAllHTMLElements, zipArraysTuple } from "./util";
 
 interface WindowWithEval extends Window {
   eval?: (js: string) => void;
 }
 
-export type Func = () => void;
+export type Func = Function | (() => void);
+export type RenderFunc = <T extends Node>() => T;
 
 export type ShadowUpdateEventListener = (iframe: HTMLIFrameElement) => void;
 

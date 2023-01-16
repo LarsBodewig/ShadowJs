@@ -5,3 +5,15 @@
   column-gap: 1rem;
   row-gap: 1rem;
 }
+
+.visible-iframe {
+  display: block !important;
+  border: 0.05rem solid red;
+}
+
+code {
+  background-color: #eee;
+  border-radius: 3px;
+  font-family: courier, monospace;
+  padding: 0 3px;
+}

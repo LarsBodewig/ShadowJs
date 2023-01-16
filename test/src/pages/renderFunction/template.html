@@ -15,15 +15,24 @@
       <p><a href="/">Back to Overview</a></p>
       <hr />
     </header>
+    <p>Usage:</p>
+    <div>
+      <p>TODO</p>
+      <code>
+        &lt;div id="shadow-container"&gt;&lt;/div&gt;<br /><br />
+        &lt;script&gt;shadowJs(shadowContainer, h('p', 'rendered text to
+        change'))&lt;/script&gt;
+      </code>
+    </div>
     <p>Original Element in visible DOM, target for Shadow:</p>
     <div>
-      <div id="shadow-container">
-        <p>TODO: Render with function</p>
-      </div>
+      <div id="shadow-container"></div>
       <button type="button" onclick="callJsInShadow()">callJsInShadow</button>
     </div>
     <p>Copy of Original Element, non-target:</p>
-    <p>text to change</p>
+    <div id="render-unchanged"></div>
+    <p>Display for shadow update listener:</p>
+    <p id="update-output"></p>
     <p>ShadowJs IFrame, made visible:</p>
   </body>
 </html>
