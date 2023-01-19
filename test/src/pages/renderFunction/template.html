@@ -17,7 +17,31 @@
     </header>
     <p>Usage:</p>
     <div>
-      <p>TODO</p>
+      <p>
+        Pass <code class="hljs-title function_">shadowJs</code> a target element
+        and a render function that builds the HTML element to render in the
+        shadow and clone under your target element. Using a render function
+        instead of a prebuilt tree inside your target element allows you to make
+        use of libraries that only exist within the shadow.
+      </p>
+      <p>
+        You can add a listener with
+        <code class="hljs-title function_">onUpdateShadow</code> to run your
+        code every time you call or add a function inside the shadow.
+        <code class="hljs-title function_">updateElementFromShadow</code> can be
+        hooked into third party libraries that manipulate the shadow to copy all
+        changes to the target element.
+      </p>
+      <p>
+        NOTE: Do not call
+        <code class="hljs-title function_">updateElementFromShadow</code> from a
+        listener added with
+        <code class="hljs-title function_">onUpdateShadow</code> as this will
+        result in an infinite loop. If you do need to call
+        <code class="hljs-title function_">updateElementFromShadow</code>, use
+        the parameter <code class="hljs-literal">false</code> to skip listener
+        execution.
+      </p>
       <pre><code>&lt;div id="shadow-container"&gt;&lt;/div&gt;</code></pre>
       <pre><code>&lt;script&gt;shadowJs(shadowContainer, h('p', 'rendered text to change'))&lt;/script&gt;</code></pre>
     </div>

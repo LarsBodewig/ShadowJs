@@ -17,8 +17,18 @@
     </header>
     <p>Usage:</p>
     <div>
-      <p>TODO</p>
-      <pre><code class="hljs language-html">&lt;div id="shadow-container"&gt;
+      <p>
+        Pass <code class="hljs-title function_">shadowJs</code> a target element
+        that already contains a tree of elements to clone into the shadow. This
+        allows you to load additional libraries that manipulate the whole
+        document without changing other elements.
+      </p>
+      <p>
+        You can add a listener with
+        <code class="hljs-title function_">onUpdateShadow</code> to run your
+        code every time you call or add a function inside the shadow.
+      </p>
+      <pre><code>&lt;div id="shadow-container"&gt;
   &lt;p&gt;text to change&lt;/p&gt;
 &lt;/div&gt;</code></pre>
     </div>
