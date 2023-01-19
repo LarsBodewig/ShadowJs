@@ -41,18 +41,14 @@ export class ShadowJs<T extends HTMLElement> {
   }
 
   public getWindowProperty<V>(property: string): V | undefined {
-    const value = (this.shadow.contentWindow as WindowWithEval)[
-      property as any
-    ];
-    if (value === undefined) return undefined;
-    else return value as V;
+    const shadowWindow = this.shadow.contentWindow as WindowWithEval;
+    return shadowWindow[property as any] as V | undefined;
   }
 
-  public callWindowFunction(name: string) {
-    const func = (this.shadow.contentWindow as WindowWithEval)[
-      name as any
-    ] as any;
-    func();
+  public callWindowFunction(name: string, ...args: any[]) {
+    const shadowWindow = this.shadow.contentWindow as WindowWithEval;
+    const func = shadowWindow[name as any] as unknown as Function;
+    func.apply(shadowWindow, args);
     this.updateElementFromShadow();
   }
 

@@ -1,4 +1,4 @@
-import { changeP } from "../../util";
+import { changeP, hightlightJs } from "../../util";
 import { shadowJs } from "shadow-js";
 
 function h() {
@@ -10,6 +10,7 @@ function h() {
 let shadow;
 
 window.addEventListener("DOMContentLoaded", async () => {
+  hightlightJs();
   const unchanged = document.querySelector("#render-unchanged");
   unchanged.appendChild(h());
 
