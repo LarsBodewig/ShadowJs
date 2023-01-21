@@ -1,2 +1,2 @@
 export { shadowJs } from "./main";
-export { ShadowJs, ShadowUpdateEventListener } from "./types";
+export { RenderFunc, ShadowJs, ShadowUpdateEventListener } from "./types";
