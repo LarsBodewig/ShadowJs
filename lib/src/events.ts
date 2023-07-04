@@ -95,10 +95,15 @@ export class EventMap implements GlobalEventHandlersEventMap {
   "webkitanimationstart": Event;
   "webkittransitionend": Event;
   "wheel": WheelEvent;
+  "cut": ClipboardEvent;
+  "copy": ClipboardEvent;
+  "paste": ClipboardEvent;
 
   static instance = Object.freeze(new EventMap());
 
-  private constructor() {}
+  private constructor() {
+    // singleton
+  }
 }
 
 export const eventKeys = Object.keys(
